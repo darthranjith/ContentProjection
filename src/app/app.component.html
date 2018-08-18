@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <app-userform (submitted)="loginUser($event)">
+                <div class="card-header">Login</div>
+                <app-remember-me (checked)="RememberUser($event)"></app-remember-me>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </app-userform>
+        </div>
+        <div class="col-6">
+            <app-userform (submitted)="CreateUser($event)">
+                <div class="card-header">Signup</div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </app-userform>
+        </div>
+    </div>
+</div>
+
+

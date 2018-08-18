@@ -1,0 +1,23 @@
+
+<div class="card">
+  <ng-content select=".card-header"></ng-content>
+  <div class="card-body">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="Email{{id}}">Email address</label>
+        <input type="email" class="form-control" id="Email{{id}}" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="Password{{id}}">Password</label>
+        <input type="password" class="form-control" id="Password{{id}}" placeholder="Password" formControlName="password">
+      </div>
+      <div class="form-group">
+        <ng-content select="app-remember-me"></ng-content>
+        <small style="display: block" *ngIf="statusMessage">
+          You'll be logged in for 30 days
+        </small>
+      </div>
+      <ng-content select="button"></ng-content>
+    </form>
+  </div>
+</div>
